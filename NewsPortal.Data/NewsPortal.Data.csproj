@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infrastructure\IRepository.cs" />
     <Compile Include="Migrations\201702061454185_InitialMigration.cs" />
     <Compile Include="Migrations\201702061454185_InitialMigration.Designer.cs">
       <DependentUpon>201702061454185_InitialMigration.cs</DependentUpon>
@@ -78,6 +79,9 @@
     <EmbeddedResource Include="Migrations\201702062012009_InitialMigration1.resx">
       <DependentUpon>201702062012009_InitialMigration1.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repository\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
