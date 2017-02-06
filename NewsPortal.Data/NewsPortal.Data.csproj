@@ -53,7 +53,13 @@
     <Compile Include="Migrations\201702061454185_InitialMigration.Designer.cs">
       <DependentUpon>201702061454185_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702062012009_InitialMigration1.cs" />
+    <Compile Include="Migrations\201702062012009_InitialMigration1.Designer.cs">
+      <DependentUpon>201702062012009_InitialMigration1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Image.cs" />
+    <Compile Include="Model\News.cs" />
     <Compile Include="Model\Role.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="DataContext\NewsContext.cs" />
@@ -68,6 +74,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201702061454185_InitialMigration.resx">
       <DependentUpon>201702061454185_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702062012009_InitialMigration1.resx">
+      <DependentUpon>201702062012009_InitialMigration1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
