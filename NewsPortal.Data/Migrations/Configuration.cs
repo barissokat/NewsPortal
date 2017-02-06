@@ -10,8 +10,6 @@ namespace NewsPortal.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            ContextKey = "NewsPortal.Data.DataContext";
-
         }
 
         protected override void Seed(NewsPortal.Data.DataContext.NewsContext context)

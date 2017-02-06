@@ -49,8 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="DataContext\NewsContext.cs" />
     <Compile Include="Migrations\201702061454185_InitialMigration.cs" />
     <Compile Include="Migrations\201702061454185_InitialMigration.Designer.cs">
       <DependentUpon>201702061454185_InitialMigration.cs</DependentUpon>
@@ -58,10 +56,13 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Role.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="DataContext\NewsContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
