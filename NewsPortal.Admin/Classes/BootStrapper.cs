@@ -1,5 +1,7 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
+using NewsPortal.Core.Infrastructure;
+using NewsPortal.Core.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +20,10 @@ namespace NewsPortal.Admin.Classes
         private static void BuildAutoFac()
         {
             var builder = new ContainerBuilder();
+            builder.RegisterType<NewsRepository>().As<INewsRepository>();
+            builder.RegisterType<UserRepository>().As<IUserRepository>();
+            builder.RegisterType<ImageRepository>().As<IImageRepository>();
+            builder.RegisterType<RoleRepository>().As<IRoleRepository>();
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
 
             //Interface ler yazılacak core içindeki
