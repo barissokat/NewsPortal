@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 using NewsPortal.Data.Model;
 using System.Linq.Expressions;
 using NewsPortal.Data.DataContext;
-using System.Data.Entity.Migrations;
 
 namespace NewsPortal.Core.Repository
 {
-    class ImageRepository : IImageRepository
+    public class ImageRepository : IImageRepository
     {
         private readonly NewsContext _context = new NewsContext();
         public int Count()
