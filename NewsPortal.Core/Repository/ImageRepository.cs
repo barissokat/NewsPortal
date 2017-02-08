@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using NewsPortal.Data.Model;
 using System.Linq.Expressions;
 using NewsPortal.Data.DataContext;
+using System.Data.Entity.Migrations;
 
 namespace NewsPortal.Core.Repository
 {
