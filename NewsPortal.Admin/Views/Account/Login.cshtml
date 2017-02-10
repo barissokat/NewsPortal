@@ -38,9 +38,11 @@
     <div class="container">
         <p class="text-center">
             MVC5 Haber Portalı
+            <br />
+            @ViewBag.Message
         </p>
         <div class="login-buttons">
-            <button class="btn btn-login" data-toggle="modal" data-target="#loginModal">Kaydol</button>
+            <button class="btn btn-login" data-toggle="modal" data-target="#loginModal">Giriş Yap</button>
             <!--<strong>or</strong>
             <button class="btn btn-login" data-toggle="modal" data-target="#signUpModal">Sign up</button>-->
         </div>
@@ -61,10 +63,10 @@
                     <div class="modal-body">
                         <form role="form">
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email" required autofocus>
+                                <input type="email" class="form-control" placeholder="Email" name="Email" required autofocus>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Şifre" required>
+                                <input type="password" class="form-control" placeholder="Şifre" name="Password" required>
                             </div>
                             <label class="checkbox">
                                 <input type="checkbox" value="remember-me"> Beni hatırla
@@ -73,7 +75,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Geri</button>
-                        <a href="index-2.html" class="btn btn-primary">Devam</a>
+                        <button type="submit" class="btn btn-primary">Devam</button>
                     </div>
                 </div>
             </div>
