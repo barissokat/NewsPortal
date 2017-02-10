@@ -23,7 +23,7 @@ namespace NewsPortal.Admin.CustomFilter
 
         public void OnActionExecuting(ActionExecutingContext context)
         {
-            throw new NotImplementedException();
+
         }
     }
 }
