@@ -20,10 +20,11 @@ namespace NewsPortal.Admin.Classes
         private static void BuildAutoFac()
         {
             var builder = new ContainerBuilder();
-            builder.RegisterType<NewsRepository>().As<INewsRepository>();
-            builder.RegisterType<UserRepository>().As<IUserRepository>();
+            builder.RegisterType<CategoryRepository>().As<ICategoryRepository>();
             builder.RegisterType<ImageRepository>().As<IImageRepository>();
+            builder.RegisterType<NewsRepository>().As<INewsRepository>();
             builder.RegisterType<RoleRepository>().As<IRoleRepository>();
+            builder.RegisterType<UserRepository>().As<IUserRepository>();
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
 
             //Interface ler yazılacak core içindeki
