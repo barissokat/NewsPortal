@@ -17,7 +17,7 @@ namespace NewsPortal.Admin.Controllers
             _categoryRepository = categoryRepository;
         }
         #endregion
-
+        
         public ActionResult Index()
         {
             return View();

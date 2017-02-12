@@ -13,6 +13,7 @@ namespace NewsPortal.Data.Model
     {
         public int ID { get; set; }
 
+        [Display(Name = "Kategori Adı:")]
         [MinLength(2, ErrorMessage = "{0} karakterden az olamaz."), MaxLength(150, ErrorMessage = "150 karakterden çok olamaz.")]
         public string Name { get; set; }
 
@@ -21,6 +22,7 @@ namespace NewsPortal.Data.Model
         [MinLength(2, ErrorMessage = "{0} karakterden az olamaz."), MaxLength(150, ErrorMessage = "150 karakterden çok olamaz.")]
         public string Url { get; set; }
 
+        [Display(Name = "Aktiflik:")]
         public bool Active { get; set; }
 
         public virtual ICollection<News> News { get; set; }
