@@ -58,6 +58,7 @@
       <DependentUpon>201702062012009_InitialMigration1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Image.cs" />
     <Compile Include="Model\News.cs" />
     <Compile Include="Model\Role.cs" />
