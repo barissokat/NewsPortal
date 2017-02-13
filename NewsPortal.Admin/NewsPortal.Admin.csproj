@@ -236,6 +236,7 @@
     <Content Include="Views\Shared\_PartialSidebar.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Category\Create.cshtml" />
+    <Content Include="Views\Category\View.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

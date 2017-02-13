@@ -3,6 +3,7 @@
     Category.Name = $("#categoryName").val();
     Category.Url = $("#categoryUrl").val();
     Category.Active = $("#categoryActive").is(":checked");
+    Category.ParentId = $("#ParentId").val();
 
     $.ajax({
         url: "/Category/Create",

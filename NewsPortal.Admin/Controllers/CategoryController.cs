@@ -24,9 +24,11 @@ namespace NewsPortal.Admin.Controllers
             return View();
         }
 
+        #region Create Category
         [HttpGet]
         public ActionResult Create()
         {
+            SetCategoryList();
             return View();
         }
 
@@ -44,5 +46,14 @@ namespace NewsPortal.Admin.Controllers
                 return Json(new ResultJson { Success = false, Message = "Kategori ekleme sırasında bir hata oluştur." });
             }
         }
+        #endregion
+
+        #region Set Category
+        public void SetCategoryList()
+        {
+            var CategoryList = _categoryRepository.GetMany(x => x.ParentId == 0).ToList();
+            ViewBag.Category = CategoryList;
+        }
+        #endregion
     }
 }
