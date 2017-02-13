@@ -5,15 +5,20 @@
     Category.Active = $("#categoryActive").is(":checked");
 
     $.ajax({
-        url: "Category/Create",
+        url: "/Category/Create",
         data: Category,
         type: "POST",
+        dataType: 'json',
         success: function (response) {
-            if (response.success) {
-                alert("Başarılı işlemlerini yap.");
+            if (response.Success) {
+                bootbox.alert(response.Message, function () {
+                    location.reload();
+                });
             }
             else {
-                alert("Başarısız işlemlerini yap.")
+                bootbox.alert(response.Message, function () {
+                    //
+                });
             }
         }
     });
