@@ -1,4 +1,5 @@
-﻿using NewsPortal.Core.Infrastructure;
+﻿using NewsPortal.Admin.Classes;
+using NewsPortal.Core.Infrastructure;
 using NewsPortal.Data.Model;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,16 @@ namespace NewsPortal.Admin.Controllers
         [HttpPost]
         public JsonResult Create(Category category)
         {
-            return Json(1, JsonRequestBehavior.AllowGet);
+            try
+            {
+                _categoryRepository.Insert(category);
+                _categoryRepository.Save();
+                return Json(new ResultJson { Success = true, Message = "Kategori başarıyla eklenmiştir." });
+            }
+            catch (Exception)
+            {
+                return Json(new ResultJson { Success = false, Message = "Kategori ekleme sırasında bir hata oluştur." });
+            }
         }
     }
 }

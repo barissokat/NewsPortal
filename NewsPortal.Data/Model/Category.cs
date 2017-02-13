@@ -15,6 +15,7 @@ namespace NewsPortal.Data.Model
 
         [Display(Name = "Kategori Adı:")]
         [MinLength(2, ErrorMessage = "{0} karakterden az olamaz."), MaxLength(150, ErrorMessage = "150 karakterden çok olamaz.")]
+        [Required]
         public string Name { get; set; }
 
         public int ParentId { get; set; }
