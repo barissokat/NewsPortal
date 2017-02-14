@@ -1,4 +1,5 @@
-﻿@model IEnumerable<NewsPortal.Data.Model.Category>
+﻿@model PagedList.IPagedList<NewsPortal.Data.Model.Category>
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Kategori Listesi";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -42,8 +43,8 @@
                                         <td>@item.User.LastName</td>
                                         <td>
                                             <button class="btn btn-default btn-sm">Düzenle</button>
-                                            @Html.ActionLink("Sil", "Delete", new { ID = item.ID }, new { onclick="return confirm('Silmek istediğinize emin misiniz?')" })
-                                            @*<button class="btn btn-default btn-sm">Sil</button>*@
+                                            @*@Html.ActionLink("Sil", "Delete", new { ID = item.ID }, new { onclick="return confirm('Silmek istediğinize emin misiniz?')" })*@
+                                            <button class="btn btn-default btn-sm" id="deleteCat" onclick="DeleteCategory()" data-id="@item.ID">Sil</button>
                                         </td>
                                     </tr>
                                 }
@@ -52,6 +53,7 @@
                     </div>
                 </div>
             </div>
+            @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page }), PagedListRenderOptions.Classic)
         </div>
         <!-- /Responsive table -->
     </div>

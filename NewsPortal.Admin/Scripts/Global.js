@@ -23,5 +23,26 @@
             }
         }
     });
-    
+}
+
+function DeleteCategory() {
+    var id = $("#deleteCat").attr("data-id");
+
+    $.ajax({
+        url: "/Category/Delete/" + id,
+        type: "POST",
+        dataType: "json",
+        success: function (response) {
+            if (response.Success) {
+                bootbox.alert(response.Message, function () {
+                    location.reload();
+                })
+            }
+            else {
+                bootbox.aler(response.Message, function () {
+                    //
+                });
+            }
+        }
+    })
 }
