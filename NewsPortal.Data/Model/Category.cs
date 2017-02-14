@@ -26,6 +26,8 @@ namespace NewsPortal.Data.Model
         [Display(Name = "Aktiflik:")]
         public bool Active { get; set; }
 
+        public virtual User User { get; set; }
+
         public virtual ICollection<News> News { get; set; }
     }
 }
