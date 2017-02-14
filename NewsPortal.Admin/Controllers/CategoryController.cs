@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 
 namespace NewsPortal.Admin.Controllers
 {
@@ -18,11 +19,13 @@ namespace NewsPortal.Admin.Controllers
             _categoryRepository = categoryRepository;
         }
         #endregion
-        
-        public ActionResult Index()
+
+        #region List Category
+        public ActionResult Index(int page = 1)
         {
-            return View(_categoryRepository.GetAll().ToList());
+            return View(_categoryRepository.GetAll().OrderByDescending(x => x.ID).ToPagedList(page, 5));
         }
+        #endregion
 
         #region Create Category
         [HttpGet]
@@ -48,10 +51,30 @@ namespace NewsPortal.Admin.Controllers
         }
         #endregion
 
-        #region
-        public ActionResult Delete(int id)
+        #region Delete Category
+        public JsonResult Delete(int id)
+        {
+            Category category = _categoryRepository.GetById(id);
+            if (category == null)
+            {
+                return Json(new ResultJson { Success = false, Message = "İşlem sırasında hata oluştu." });
+            }
+            _categoryRepository.Delete(id);
+            _categoryRepository.Save();
+
+            return Json( new ResultJson { Success=true, Message="Kategori başarıyla silinmiştir." });
+        }
+        #endregion
+
+        #region Edit Category
+        [HttpGet]
+        public ActionResult Edit(int id)
         {
             return View();
+        }
+        public JsonResult Edit(Category category)
+        {
+            return Json(1);
         }
         #endregion
 
