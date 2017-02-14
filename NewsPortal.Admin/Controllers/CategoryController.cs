@@ -21,7 +21,7 @@ namespace NewsPortal.Admin.Controllers
         
         public ActionResult Index()
         {
-            return View();
+            return View(_categoryRepository.GetAll().ToList());
         }
 
         #region Create Category
@@ -45,6 +45,13 @@ namespace NewsPortal.Admin.Controllers
             {
                 return Json(new ResultJson { Success = false, Message = "Kategori ekleme sırasında bir hata oluştur." });
             }
+        }
+        #endregion
+
+        #region
+        public ActionResult Delete(int id)
+        {
+            return View();
         }
         #endregion
 
