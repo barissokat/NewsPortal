@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PagedList;
+using NewsPortal.Admin.CustomFilter;
 
 namespace NewsPortal.Admin.Controllers
 {
@@ -68,13 +69,34 @@ namespace NewsPortal.Admin.Controllers
 
         #region Edit Category
         [HttpGet]
+        [LoginFilter]
         public ActionResult Edit(int id)
         {
-            return View();
+            Category category = _categoryRepository.GetById(id);
+            if (category == null)
+            {
+                throw new Exception("Kategori bulunamadı.");
+            }
+            SetCategoryList();
+            return View(category);
         }
+        [HttpPost]
+        [LoginFilter]
         public JsonResult Edit(Category category)
         {
-            return Json(1);
+            if (ModelState.IsValid)
+            {
+                Category cat = _categoryRepository.GetById(category.ID);
+                cat.Name = category.Name;
+                cat.ParentId = category.ParentId;
+                cat.Url = category.Url;
+                cat.Active = category.Active;
+                //Daha sonra dönülecek
+                cat.User.ID = 1;
+                _categoryRepository.Save();
+                return Json(new ResultJson { Success = true, Message = "Kategori başarıyla düzenlenmiştir." });
+            }
+            return Json(new ResultJson { Success = false, Message = "Kategori düzenleme sırasında bir hata oluştur." });
         }
         #endregion
 
