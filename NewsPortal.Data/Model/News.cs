@@ -9,10 +9,8 @@ using System.Threading.Tasks;
 namespace NewsPortal.Data.Model
 {
     [Table("News")]
-    public class News
+    public class News : BaseEntity
     {
-        public int ID { get; set; }
-
         [Display(Name = "Haber Başlığı:")]
         [MaxLength(255,ErrorMessage = "Haber başlığını çok uzun girdiniz.")]
         [Required]
@@ -26,12 +24,6 @@ namespace NewsPortal.Data.Model
 
         [Display(Name = "Okunma Sayısı:")]
         public int ReadCount { get; set; }
-
-        [Display(Name = "Aktiflik:")]
-        public bool Active { get; set; }
-
-        [Display(Name = "Yüklenme Tarihi:")]
-        public DateTime UploadDate { get; set; }
 
         public virtual User User { get; set; }
 

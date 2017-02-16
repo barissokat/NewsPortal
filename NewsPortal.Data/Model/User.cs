@@ -11,6 +11,10 @@ namespace NewsPortal.Data.Model
     [Table("User")]
     public class User
     {
+        private DateTime date = DateTime.Now;
+
+        private bool active = true;
+
         public int ID { get; set; }
 
         [Display(Name = "Ad:")]
@@ -31,10 +35,10 @@ namespace NewsPortal.Data.Model
         public string Password { get; set; }
 
         [Display(Name = "Kayıt Tarihi:")]
-        public DateTime RegistrationDate { get; set; }
+        public DateTime RegistrationDate { get { return date; } set { date = value; } }
 
         [Display(Name = "Aktiflik:")]
-        public bool Active { get; set; }
+        public bool Active { get { return active; } set { active = value; } }
 
         public virtual Role Role { get; set; }
     }

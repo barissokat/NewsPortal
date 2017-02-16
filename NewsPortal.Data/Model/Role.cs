@@ -9,10 +9,8 @@ using System.Threading.Tasks;
 namespace NewsPortal.Data.Model
 {
     [Table("Role")]
-    public class Role
+    public class Role : BaseEntity
     {
-        public int ID { get; set; }
-
         [Display(Name = "Rol Adı:")]
         public string RoleName { get; set; }
     }

@@ -9,10 +9,8 @@ using System.Threading.Tasks;
 namespace NewsPortal.Data.Model
 {
     [Table("Image")]
-    public class Image
+    public class Image : BaseEntity
     {
-        public int ID { get; set; }
-
         [Display(Name = "Resim:")]
         public string Images { get; set; }
 

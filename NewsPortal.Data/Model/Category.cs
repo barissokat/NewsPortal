@@ -9,10 +9,8 @@ using System.Threading.Tasks;
 namespace NewsPortal.Data.Model
 {
     [Table("Category")]
-    public class Category
+    public class Category : BaseEntity
     {
-        public int ID { get; set; }
-
         [Display(Name = "Kategori Adı:")]
         [MinLength(2, ErrorMessage = "{0} karakterden az olamaz."), MaxLength(150, ErrorMessage = "150 karakterden çok olamaz.")]
         [Required]
@@ -22,10 +20,7 @@ namespace NewsPortal.Data.Model
 
         [MinLength(2, ErrorMessage = "{0} karakterden az olamaz."), MaxLength(150, ErrorMessage = "150 karakterden çok olamaz.")]
         public string Url { get; set; }
-
-        [Display(Name = "Aktiflik:")]
-        public bool Active { get; set; }
-
+        
         public virtual User User { get; set; }
 
         public virtual ICollection<News> News { get; set; }
