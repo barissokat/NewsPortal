@@ -21,8 +21,6 @@ namespace NewsPortal.Data.Model
         [MinLength(2, ErrorMessage = "{0} karakterden az olamaz."), MaxLength(150, ErrorMessage = "150 karakterden çok olamaz.")]
         public string Url { get; set; }
         
-        public virtual User User { get; set; }
-
         public virtual ICollection<News> News { get; set; }
     }
 }
