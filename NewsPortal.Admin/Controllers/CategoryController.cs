@@ -91,8 +91,6 @@ namespace NewsPortal.Admin.Controllers
                 cat.ParentId = category.ParentId;
                 cat.Url = category.Url;
                 cat.Active = category.Active;
-                //Daha sonra dönülecek
-                cat.User.ID = 1;
                 _categoryRepository.Save();
                 return Json(new ResultJson { Success = true, Message = "Kategori başarıyla düzenlenmiştir." });
             }

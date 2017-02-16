@@ -18,9 +18,10 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Adı</th>
+                                    <th>Url</th>
                                     <th>Üst Kategori</th>
                                     <th>Durum</th>
-                                    <th>Ekleyen</th>
+                                    <th>Yüklenme Tarihi</th>
                                     <th>İşlemler</th>
                                 </tr>
                             </thead>
@@ -30,6 +31,7 @@
                                     <tr>
                                         <td><span class="label label-success">@item.ID</span></td>
                                         <td>@item.Name</td>
+                                        <td>@item.Url</td>
                                         <td>@item.ParentId</td>
                                         <td>
                                             @if (item.Active == true)
@@ -40,13 +42,13 @@
                                             {
                                                 <b class="label label-danger">Pasif</b>
                                             }
-                                        <td>@item.User.LastName</td>
+                                        <td>@item.UploadDate</td>
                                         <td>
-                                            <a href="@Url.Action("Edit", "Category", new { ID = item.ID})" class="btn btn-default btn-sm">Düzenle</a> 
+                                            <a href="@Url.Action("Edit", "Category", new { ID = item.ID})" class="btn btn-default btn-sm">Düzenle</a>
                                             @*<button class="btn btn-default btn-sm">Düzenle</button>*@
 
                                             @*@Html.ActionLink("Sil", "Delete", new { ID = item.ID }, new { onclick="return confirm('Silmek istediğinize emin misiniz?')" })*@
-                                            @*<button class="btn btn-default btn-sm" id="deleteCat" onclick="DeleteCategory()" data-id="@item.ID">Sil</button>*@
+                                            <button class="btn btn-default btn-sm" id="deleteCat" onclick="DeleteCategory()" data-id="@item.ID">Sil</button>
                                         </td>
                                     </tr>
                                 }
