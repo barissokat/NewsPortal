@@ -49,15 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201702061454185_InitialMigration.cs" />
-    <Compile Include="Migrations\201702061454185_InitialMigration.Designer.cs">
-      <DependentUpon>201702061454185_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702062012009_InitialMigration1.cs" />
-    <Compile Include="Migrations\201702062012009_InitialMigration1.Designer.cs">
-      <DependentUpon>201702062012009_InitialMigration1.cs</DependentUpon>
+    <Compile Include="Migrations\201702160545252_InitialMigration.cs" />
+    <Compile Include="Migrations\201702160545252_InitialMigration.Designer.cs">
+      <DependentUpon>201702160545252_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\BaseEntity.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Image.cs" />
     <Compile Include="Model\News.cs" />
@@ -73,14 +70,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702061454185_InitialMigration.resx">
-      <DependentUpon>201702061454185_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702062012009_InitialMigration1.resx">
-      <DependentUpon>201702062012009_InitialMigration1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702160545252_InitialMigration.resx">
+      <DependentUpon>201702160545252_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
