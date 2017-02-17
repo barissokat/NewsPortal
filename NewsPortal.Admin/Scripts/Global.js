@@ -25,8 +25,8 @@
     });
 }
 
-function DeleteCategory() {
-    var id = $("#deleteCat").attr("data-id");
+$(".deleteCat").click(function () {
+    var id = $(this).attr("data-id");
 
     $.ajax({
         url: "/Category/Delete/" + id,
@@ -39,13 +39,13 @@ function DeleteCategory() {
                 })
             }
             else {
-                bootbox.aler(response.Message, function () {
+                bootbox.alert(response.Message, function () {
                     //
                 });
             }
         }
     })
-}
+});
 
 function EditCategory() {
     Category = new Object();
