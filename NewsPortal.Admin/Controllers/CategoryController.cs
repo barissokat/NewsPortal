@@ -24,7 +24,7 @@ namespace NewsPortal.Admin.Controllers
         #region List Category
         public ActionResult Index(int page = 1)
         {
-            return View(_categoryRepository.GetAll().OrderByDescending(x => x.ID).ToPagedList(page, 5));
+            return View(_categoryRepository.GetAll().OrderByDescending(x => x.ID).ToPagedList(page, 10));
         }
         #endregion
 

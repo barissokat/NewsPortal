@@ -15,19 +15,19 @@
                     <form role="form">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Üst Kategori</label>
-                            @Html.DropDownListFor(model => model.Name, new SelectList(ViewBag.Category, "ID", "Name"), ("Seçiniz"), new { @class = "form-control", id = "ParentId" })
+                            @Html.DropDownListFor(model => model.ParentId, new SelectList(ViewBag.Category, "ID", "Name"), ("Seçiniz"), new { @class = "form-control", id = "ParentId" })
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Kategori Adı</label>
-                            @Html.TextBoxFor(x => x.Name, new { @class = "form-control", id = "categoryName", placeholder = "Kategori Adı" })
+                            @Html.TextBoxFor(model => model.Name, new { @class = "form-control", id = "categoryName", placeholder = "Kategori Adı" })
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Url</label>
-                            @Html.TextBoxFor(x => x.Url, new { @class = "form-control", id = "categoryUrl", placeholder = "Url" })
+                            @Html.TextBoxFor(model => model.Url, new { @class = "form-control", id = "categoryUrl", placeholder = "Url" })
                         </div>
                         <div class="checkbox">
                             <label>
-                                @Html.CheckBoxFor(x => x.Active, new { @checked = "checked", id = "categoryActive" }) Aktif Mi?
+                                @Html.CheckBoxFor(model => model.Active, new { @checked = "checked", id = "categoryActive" }) Aktif Mi?
                             </label>
                         </div>
                         <a href="#" class="btn btn-default" onclick="EditCategory();">Kaydet</a>

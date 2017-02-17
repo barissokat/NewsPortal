@@ -32,7 +32,12 @@
                                         <td><span class="label label-success">@item.ID</span></td>
                                         <td>@item.Name</td>
                                         <td>@item.Url</td>
-                                        <td>@item.ParentId</td>
+                                        <td>
+                                            @foreach (var cat in Model.Where(x => x.ID == item.ParentId))
+                                            {
+                                                <span>@cat.Name</span>
+                                            }
+                                        </td>
                                         <td>
                                             @if (item.Active == true)
                                             {
