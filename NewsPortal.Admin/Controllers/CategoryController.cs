@@ -30,6 +30,7 @@ namespace NewsPortal.Admin.Controllers
 
         #region Create Category
         [HttpGet]
+        [LoginFilter]
         public ActionResult Create()
         {
             SetCategoryList();
