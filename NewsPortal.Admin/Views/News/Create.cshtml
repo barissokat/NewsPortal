@@ -1,0 +1,68 @@
+﻿@model NewsPortal.Data.Model.News
+@{
+    ViewBag.Title = "Haber Ekle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/ckeditor/ckeditor.js"></script>
+
+<div class="container-fluid">
+    <!-- Basic form -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <header class="panel-heading">@ViewBag.Title</header>
+                <div class="panel-body">
+                    <form role="form">
+                        @*<div class="form-group">
+                                <label for="exampleInputEmail1">Üst Kategori</label>
+                                @Html.DropDownListFor(model => model.Name, new SelectList(ViewBag.Category, "ID", "Name"), ("Seçiniz"), new { @class = "form-control", id = "ParentId" })
+                            </div>*@
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Başlık</label>
+                            @Html.TextBoxFor(x => x.Title, new { @class = "form-control", id = "newsTitle", placeholder = "Başlık" })
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Özet</label>
+                            @*@Html.TextAreaFor(x => x.Summary, new { @class = "form-control", id = "newsSummary", placeholder = "Özet" })*@
+                            @Html.TextArea("Summary")
+                            <script type="text/javascript">
+                                var editor = CKEDITOR.instances["Summary"];
+                                if (editor) {
+                                    editor.destroy(true);
+                                }
+                                CKEDITOR.replace("Summary", {
+                                    enterMode: CKEDITOR.ENTER_BR
+                                });
+                            </script>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">İçerik</label>
+                            @*@Html.TextAreaFor(x => x.Content, new { @class = "form-control", id = "newsContent", placeholder = "İçerik" })*@
+                            @Html.TextArea("Content")
+                            <script type="text/javascript">
+                                var editor = CKEDITOR.instances["Content"];
+                                if (editor) {
+                                    editor.destroy(true);
+                                }
+                                CKEDITOR.replace("Content", {
+                                    enterMode: CKEDITOR.ENTER_BR
+                                });
+                            </script>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Ana Resim</label>
+                            <input type="file" name="newsImage" accept="image/" class="form-control" />
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                @Html.CheckBoxFor(x => x.Active, new { @checked = "checked", id = "newsActive" }) Aktif Mi?
+                            </label>
+                        </div>
+                        <a href="#" class="btn btn-default" onclick="CreateNews();">Kaydet</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Basic form -->
+</div>

@@ -17,15 +17,15 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Kategori Adı</label>
-                            <input type="text" class="form-control" id="categoryName" placeholder="Kategori Adı">
+                            @Html.TextBoxFor(x => x.Name, new { @class = "form-control", id = "categoryName", placeholder = "Kategori Adı" })
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Url</label>
-                            <input type="text" class="form-control" id="categoryUrl" placeholder="Url">
+                            @Html.TextBoxFor(x => x.Url, new { @class = "form-control", id = "categoryUrl", placeholder = "Url" })
                         </div>
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" checked id="categoryActive"> Aktif Mi?
+                                @Html.CheckBoxFor(x => x.Active, new { @checked = "checked", id = "newsActive" }) Aktif Mi?
                             </label>
                         </div>
                         <a href="#" class="btn btn-default" onclick="CreateCategory();">Kaydet</a>
