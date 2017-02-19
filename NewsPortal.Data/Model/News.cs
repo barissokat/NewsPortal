@@ -25,6 +25,9 @@ namespace NewsPortal.Data.Model
         [Display(Name = "Okunma Sayısı:")]
         public int ReadCount { get; set; }
 
+        [Display(Name = "Resim:")]
+        public string MainImage { get; set; }
+
         public virtual User User { get; set; }
 
         public virtual ICollection<Image> Image { get; set; }
