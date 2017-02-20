@@ -34,20 +34,15 @@ $(".deleteCat").click(function () {
         type: "POST",
         dataType: "json",
         success: function (response) {
+            if (response.Success) {
             $.notify(response.Message, "success");
             deletedRow.fadeOut(300, function () {
                 deletedRow.remove();
             })
-            /*if (response.Success) {
-                bootbox.alert(response.Message, function () {
-                    //location.reload();
-                /
             }
             else {
-                bootbox.alert(response.Message, function () {
-                    //
-                });
-            }*/
+                $.notify(response.Message, "error");
+            }
         }
     })
 });
