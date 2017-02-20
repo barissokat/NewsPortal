@@ -27,22 +27,27 @@
 
 $(".deleteCat").click(function () {
     var id = $(this).attr("data-id");
+    var deletedRow = $(this).closest("tr");
 
     $.ajax({
         url: "/Category/Delete/" + id,
         type: "POST",
         dataType: "json",
         success: function (response) {
-            if (response.Success) {
+            $.notify(response.Message, "success", {position: "left"});
+            deletedRow.fadeOut(300, function () {
+                deletedRow.remove();
+            })
+            /*if (response.Success) {
                 bootbox.alert(response.Message, function () {
-                    location.reload();
-                })
+                    //location.reload();
+                /
             }
             else {
                 bootbox.alert(response.Message, function () {
                     //
                 });
-            }
+            }*/
         }
     })
 });
