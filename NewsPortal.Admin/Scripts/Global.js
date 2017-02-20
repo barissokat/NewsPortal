@@ -34,7 +34,7 @@ $(".deleteCat").click(function () {
         type: "POST",
         dataType: "json",
         success: function (response) {
-            $.notify(response.Message, "success", {position: "left"});
+            $.notify(response.Message, "success");
             deletedRow.fadeOut(300, function () {
                 deletedRow.remove();
             })

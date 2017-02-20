@@ -53,7 +53,7 @@
                                             @*<button class="btn btn-default btn-sm">Düzenle</button>*@
 
                                             @*@Html.ActionLink("Sil", "Delete", new { ID = item.ID }, new { onclick="return confirm('Silmek istediğinize emin misiniz?')" })*@
-                                            <button class="btn btn-default btn-sm deleteCat" onclick="DeleteCategory()" data-id="@item.ID">Sil</button>
+                                            <button class="btn btn-default btn-sm deleteCat" data-id="@item.ID">Sil</button>
                                         </td>
                                     </tr>
                                 }
