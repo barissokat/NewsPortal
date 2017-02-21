@@ -35,10 +35,10 @@ $(".deleteCat").click(function () {
         dataType: "json",
         success: function (response) {
             if (response.Success) {
-            $.notify(response.Message, "success");
-            deletedRow.fadeOut(300, function () {
-                deletedRow.remove();
-            })
+                $.notify(response.Message, "success");
+                deletedRow.fadeOut(300, function () {
+                    deletedRow.remove();
+                })
             }
             else {
                 $.notify(response.Message, "error");

@@ -13,7 +13,7 @@ namespace NewsPortal.Admin.Controllers
 {
     public class CategoryController : Controller
     {
-        #region Category
+        #region Database
         private readonly ICategoryRepository _categoryRepository;
         public CategoryController(ICategoryRepository categoryRepository)
         {
